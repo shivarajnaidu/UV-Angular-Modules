@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>UV AngularJS Pagination</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="../uv-pagination-module.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="uvPaginator">
+    <ul>
+        <li ng-repeat="x in myPagination.currentModel">{{x}}</li>
+    </ul>
+    <button ng-click="myPagination.previousPage()" ng-disabled="myPagination.isDisabledPrev">prev</button>
+    <button ng-click="myPagination.nextPage()" ng-disabled="myPagination.isDisabledNext">next</button>
+    <script>
+    function mainctrl($scope, Pagination) {
+        let testData = [1231, 1232, 1233, 1234, 1235, 1236, 1237, 1238, 1239, 12310, 12311, 12312, 12313, 12314, 12315, 12316];
+        $scope.myPagination = Pagination(testData, 4); // Number Items Need To Display Per View/Page
+        let myPagination = $scope.myPagination;
+        myPagination.setCurrentModelState(myPagination)
+    }
+
+    let app = angular.module("myApp", ["uvPagination"]);
+    app.controller("uvPaginator", ["$scope", "Pagination", mainctrl]);
+    </script>
+</body>
+
+</html>
