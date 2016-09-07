@@ -12,7 +12,7 @@
     <ul>
         <li ng-repeat="x in myPagination.currentModel">{{x}}</li>
     </ul>
-    <button ng-click="myPagination.previousPage()" ng-disabled="myPagination.isDisabledPrev">prev</button>
+    <button ng-click="myPagination.previousPage()" ng-disabled="myPagination.isDisabledPrevious">prev</button>
     <button ng-click="myPagination.nextPage()" ng-disabled="myPagination.isDisabledNext">next</button>
     <script>
     function mainctrl($scope, Pagination) {
