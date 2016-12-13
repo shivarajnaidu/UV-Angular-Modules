@@ -7,11 +7,11 @@
  *
  */
 
-"use strict";
+'use strict';
 
 (() => {
-    let app = angular.module("uvPagination", []);
-    app.factory("Pagination", () => {
+    angular.module('uvPagination', [])
+    .factory('Pagination', () => {
 
         return (data, itemsPerPage) => {
             let Paginator = {};
