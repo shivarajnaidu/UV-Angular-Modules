@@ -22,7 +22,7 @@
             Paginator.end = Paginator.itemsPerPage;
             Paginator.currentModel = data.slice(Paginator.start, Paginator.end);
             Paginator.isDisabledPrevious = true;
-            Paginator.isDisabledNext = false;
+            Paginator.isDisabledNext = (Paginator.itemsPerPage >= Paginator.totalDataLength); // Will return true or false based on condition
 
             Paginator.setCurrentModelState = paginator => {
                 Paginator.currentModel = paginator.currentModel
