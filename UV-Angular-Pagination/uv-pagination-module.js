@@ -37,15 +37,16 @@
             Paginator.previousPage = () => {
                 Paginator.start -= Paginator.itemsPerPage;
                 Paginator.end -= Paginator.itemsPerPage;
-                Paginator.start == 0 ? Paginator.isDisabledPrevious = true : Paginator.isDisabledNext = false;
+                Paginator.start == 0 ? (Paginator.isDisabledPrevious = true) && (Paginator.isDisabledNext = false) : Paginator.isDisabledNext = false;
                 Paginator.changeCurrentModel()
             };
 
             Paginator.nextPage = () => {
                 Paginator.start += Paginator.itemsPerPage;
                 Paginator.end += Paginator.itemsPerPage;
-                Paginator.end >= Paginator.totalDataLength ? Paginator.isDisabledNext = true : Paginator.isDisabledPrevious = false;
+                Paginator.end >= Paginator.totalDataLength ? (Paginator.isDisabledNext = true) && (Paginator.isDisabledPrevious = false) : Paginator.isDisabledPrevious = false;
                 Paginator.changeCurrentModel()
+                console.log(Paginator.isDisabledPrevious)
             };
 
             return Paginator;
